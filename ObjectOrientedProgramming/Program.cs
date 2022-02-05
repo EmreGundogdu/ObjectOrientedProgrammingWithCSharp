@@ -14,7 +14,8 @@ Console.WriteLine(myClass.Yasi); //get blogu tetiklenir
 myClass.Yasi = 21; //set blogu tetiklenir.
 myClass.X();
 myClass.X(4, 5);
-
+myClass[5] = 10;
+Console.WriteLine(myClass[5]);
 class MyClass
 {
     int yasi; //Field
