@@ -18,9 +18,21 @@ myClass[5] = 10;
 Console.WriteLine(myClass[5]);
 MyClass2 myClass2 = new MyClass2();
 MyClass2.MyClass3 myClass3 = new MyClass2.MyClass3();
-myClass2.x(5);
-
+myClass2.X(5);
+MyClass4 myClass4 = new MyClass4();
+myClass4.X();
 //Oluşturduğumuz yapılara açıklama satırı eklememiz için class,metot,property vs gibi yapıların üstüne üç slash işareti ile açıklama satırı ekleyebiliriz
+#region This Keywordü
+//Sınıfın nesnesini temsil eder
+//this keywordü ilgili class yapılanmasının o anki nesnesine karşılık gelir.
+//this kullanmak zorunlu değildir.
+//THİS KULLANILDIĞI YER : Aynı isimde field ile metot parametrelerini ayırmak için kullanılır!!!!
+//Bir constructor'dan başka bir constructer'i çağırmak için kullanılır
+#endregion
+new MyNesneClass();//Heapte nesne oluşturduk. STACK kısmında oluşturualkacak olan bir değişken ile heapteki nesne referans olarak gösterilebilir. Yani
+MyNesneClass myNesne; //Stackte oluşturulmuş olan bir değişken bunu New NyNesneClass(); ile stackteki değişkenin referansını heapteki MyNesneClassı nesnesini işaretlemiş oluruz.
+//MyNesneClass myNesne = new();
+
 class MyClass
 {
     int yasi; //Field
@@ -141,12 +153,28 @@ class MyClass2
     /// Bu bir parametre alan bir metot overloadıdır.
     /// </summary>
     /// <param name="a">a parametresi</param>
-    public void x(int a) { }
+    public void X(int a) { }
     public int this[int a]
     {
         get { return a; }
     }
     public class MyClass3
+    {
+
+    }
+}
+class MyClass4
+{
+    int a;
+    public void X()
+    {
+        //this.a   this keywordünü kullandığımızda field olan a'dır.
+    }
+}
+class MyNesneClass
+{
+    public int a { get; set; }
+    public void X()
     {
 
     }
