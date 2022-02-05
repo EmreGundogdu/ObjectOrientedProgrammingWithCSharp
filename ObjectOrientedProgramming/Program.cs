@@ -12,6 +12,8 @@
 MyClass myClass = new MyClass(); //Nesne oluşturma
 Console.WriteLine(myClass.Yasi); //get blogu tetiklenir
 myClass.Yasi = 21; //set blogu tetiklenir.
+myClass.X();
+myClass.X(4, 5);
 
 class MyClass
 {
@@ -67,6 +69,29 @@ class MyClass
     #endregion
     #region Init-Only Properties - Init Accessor
 
+    #endregion
+    #region Metot
+    public int X()
+    {
+        return 5;
+    }
+    public int X(int a, int b)
+    {
+        return a + b;
+    }
+    #endregion
+    #region Indexer
+    public int this[int a]
+    {
+        get
+        {
+            return a;
+        }
+        set
+        {
+            a = value;
+        }
+    }
     #endregion
 }
 class Banka
