@@ -21,6 +21,9 @@ MyClass2.MyClass3 myClass3 = new MyClass2.MyClass3();
 myClass2.X(5);
 MyClass4 myClass4 = new MyClass4();
 myClass4.X();
+MyReferanceClass myReferance = new MyReferanceClass();
+myReferance.MyProperty = 10; //Heapteki MyReferanceClass nesnesinin myproperty alanı 10 olmuş oldu
+ 
 //Oluşturduğumuz yapılara açıklama satırı eklememiz için class,metot,property vs gibi yapıların üstüne üç slash işareti ile açıklama satırı ekleyebiliriz
 #region This Keywordü
 //Sınıfın nesnesini temsil eder
@@ -178,4 +181,8 @@ class MyNesneClass
     {
 
     }
+}
+class MyReferanceClass
+{
+    public int MyProperty { get; set; }
 }
