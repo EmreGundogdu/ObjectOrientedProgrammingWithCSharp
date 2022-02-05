@@ -35,7 +35,38 @@ class MyClass
     #endregion
     #region Prop Property
     //Field'i otomatik olarak tanımlar"adi" fieldini tanımlar. Küçük harfle ve get ve set işlemlerini kendi içinde tanımlar.
-    public int Adi { get; set; } 
+    public string Adi { get; set; }
+    #region Auto Property
+    public string Soyadi { get; set; } = "Gündoğdu";
+    #endregion
+    #endregion
+    #region Ref Readonly Returns
+    string no;
+    public ref readonly string No => ref no;
+    #endregion
+    #region Computed(Hesaplanmış) Properties
+    int s1 = 5;
+    int s2 = 5;
+    public int Topla
+    {
+        get
+        {
+            return s1 + s2;
+        }
+    }
+    #endregion
+    #region Expression-Bodied Property
+    //public string Cinsiyet
+    //{
+    //    get
+    //    {
+    //        return "Erkek";
+    //    }
+    //}
+    public string Cinsiyet => "Erkek"; //bu şekilde kısa bir tanım ile yapılabilir
+    #endregion
+    #region Init-Only Properties - Init Accessor
+
     #endregion
 }
 class Banka
