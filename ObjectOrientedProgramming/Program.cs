@@ -27,6 +27,31 @@ new MyReferanceClass(); //Referanssız Nesne
                         //Referanssız Nesne : Eğer ki bir nesne referanssızsa bunu oluşturabilmekteyiz... lakin bu nesne sistemde/memory'de lüzumsuz yer kaplayacagından dolayı belli bir süre sonra Garbage Collector dediğimiz çöp toplayıcısı tarafından temizlenecektir. Garbage Collector : Heap'te referanssız olan nesneleri imha etmekten/temizlemekten sorumlu bir yapılanmadır.
 
 //Oluşturduğumuz yapılara açıklama satırı eklememiz için class,metot,property vs gibi yapıların üstüne üç slash işareti ile açıklama satırı ekleyebiliriz
+#region Shallow Copy
+//Bir nesne stack'te birden fazla referans ile işaretlenirse buna SHALLOW COPY DENİR
+#region Örnek 1
+MyShallowClass shallowClass = new MyShallowClass();
+MyShallowClass shallowClass1 = shallowClass;
+MyShallowClass shallowClass2 = shallowClass;
+#endregion
+#region Örnek 2
+MyShallowClass m1 = null; //4)m1'in referansı da heapteki nesne oldu
+MyShallowClass m2 = new MyShallowClass(); //1)Heapteki nesneyi referans eder
+MyShallowClass m3 = m2; //2)m2'de nesneyi referans ettikten sonra aynı nesneyi m3 ile referans ettik
+m1 = m3; //3)m3'ün referans ettiği bir nesne vardı heapte bunu m1'e referans ediyoruz işaretliyoruz yani m1'in referansı da heapteki myshallowcase nesnesi oldu
+#endregion
+#region Örnek 3
+MyShallowClass m4 = new MyShallowClass(); //1) m4 referansımız var heapte bir nesneyi işaretliyor var
+MyShallowClass m5 = new MyShallowClass(); //2) m5 referansı var heapte bir tane daha nesneyi işaretliyor
+MyShallowClass m6 = m4; //3) m4 referansının heapteki nesnesini işaretliyor
+m4 = m5; //m4 referansı m5 referansının işaretlediği nesneyi işaretlicektir. yani m4ün nesnesi değişti
+m5 = m4; //m5 referansı kendi nesnesini işaret ettiği için m4'te zaten m5'in referansını işaretliyodu.bozulmadı
+m4 = m4; //m4 referansı neyi işaret ediyorsa onu tekrar işaretlicek
+#endregion
+#endregion
+#region Deep Copy
+//Değer türlü değişkenlerde stackte bulunan değişkenlerin heapte bulunan bir nesneyi işaretlemesidir.
+#endregion
 #region This Keywordü
 //Sınıfın nesnesini temsil eder
 //this keywordü ilgili class yapılanmasının o anki nesnesine karşılık gelir.
@@ -207,4 +232,8 @@ class MyReferanceClass
     public int MyProperty { get; set; }
     public int MyProperty2 { get; set; }
     public int MyProperty3 { get; set; }
+}
+class MyShallowClass
+{
+
 }
