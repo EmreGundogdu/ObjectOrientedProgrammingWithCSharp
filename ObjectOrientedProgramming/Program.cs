@@ -28,7 +28,9 @@ new MyReferanceClass(); //Referanssız Nesne
 
 //Oluşturduğumuz yapılara açıklama satırı eklememiz için class,metot,property vs gibi yapıların üstüne üç slash işareti ile açıklama satırı ekleyebiliriz
 #region Shallow Copy
+//Referans türlü değişkenlerin/değerlerin default davranışı shallow copy'dir
 //Bir nesne stack'te birden fazla referans ile işaretlenirse buna SHALLOW COPY DENİR
+//YANİ : HEAPTE NESNE TEK LAKİN STACKTE İŞARETLEYEN REFERANS SAYISI BİRDEN FAZLA İSE BUNA SHALLOW COPY DENİR.
 #region Örnek 1
 MyShallowClass shallowClass = new MyShallowClass();
 MyShallowClass shallowClass1 = shallowClass;
@@ -50,7 +52,11 @@ m4 = m4; //m4 referansı neyi işaret ediyorsa onu tekrar işaretlicek
 #endregion
 #endregion
 #region Deep Copy
+//int a = 5;
+//int b = a;  //a'nın değeri kopyalandı ve b'ye atanır. KISACA DEEP COPY BU KADAR. Bunlar birbirlerinden farklı çalışırlar. a'yı 5 ile çarptığımız zaman 25 gelir ama b'nin değeri etkilenmez
+
 //Değer türlü değişkenlerde stackte bulunan değişkenlerin heapte bulunan bir nesneyi işaretlemesidir.
+//Değer türlü değişkenlerde default davranış deep copydir.
 #endregion
 #region This Keywordü
 //Sınıfın nesnesini temsil eder
