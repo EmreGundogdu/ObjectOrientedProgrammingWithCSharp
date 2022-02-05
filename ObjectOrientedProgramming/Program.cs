@@ -21,8 +21,10 @@ MyClass2.MyClass3 myClass3 = new MyClass2.MyClass3();
 myClass2.X(5);
 MyClass4 myClass4 = new MyClass4();
 myClass4.X();
-MyReferanceClass myReferance = new MyReferanceClass();
+MyReferanceClass myReferance = new MyReferanceClass(); //Referanslı nesne
 myReferance.MyProperty = 10; //Heapteki MyReferanceClass nesnesinin myproperty alanı 10 olmuş oldu
+new MyReferanceClass(); //Referanssız Nesne
+//Referanssız Nesne : Eğer ki bir nesne referanssızsa bunu oluşturabilmekteyiz... lakin bu nesne sistemde/memory'de lüzumsuz yer kaplayacagından dolayı belli bir süre sonra Garbage Collector dediğimiz çöp toplayıcısı tarafından temizlenecektir. Garbage Collector : Heap'te referanssız olan nesneleri imha etmekten/temizlemekten sorumlu bir yapılanmadır.
  
 //Oluşturduğumuz yapılara açıklama satırı eklememiz için class,metot,property vs gibi yapıların üstüne üç slash işareti ile açıklama satırı ekleyebiliriz
 #region This Keywordü
