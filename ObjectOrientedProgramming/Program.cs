@@ -58,6 +58,10 @@ m4 = m4; //m4 referansı neyi işaret ediyorsa onu tekrar işaretlicek
 //Değer türlü değişkenlerde stackte bulunan değişkenlerin heapte bulunan bir nesneyi işaretlemesidir.
 //Değer türlü değişkenlerde default davranış deep copydir.
 #endregion
+#region Nesnelerde Deep Copy
+MyDeepClass myDeepClass = new MyDeepClass();
+MyDeepClass myDeepClass1 = myDeepClass.Clone(); //Memberwise fonk ile bir nesne işaretlenirse o zaman nesnelerde deep copy olmuş olur
+#endregion
 #region This Keywordü
 //Sınıfın nesnesini temsil eder
 //this keywordü ilgili class yapılanmasının o anki nesnesine karşılık gelir.
@@ -80,7 +84,7 @@ new MyReferanceClass()
     MyProperty = 20,
     MyProperty2 = 20,
     MyProperty3 = 20,
-}
+};
 #endregion
 #endregion
 new MyNesneClass();//Heapte nesne oluşturduk. STACK kısmında oluşturualkacak olan bir değişken ile heapteki nesne referans olarak gösterilebilir. Yani
@@ -242,4 +246,12 @@ class MyReferanceClass
 class MyShallowClass
 {
 
+}
+class MyDeepClass
+{
+    public MyDeepClass Clone()
+    {
+        //MemberwiseClone : Bir sınıf içerisinde o sınıftan üretilmiş olan o anki nesneyi clonelamamızı sağlayan bir fonksiyondur.
+        return (MyDeepClass)this.MemberwiseClone();
+    }
 }
