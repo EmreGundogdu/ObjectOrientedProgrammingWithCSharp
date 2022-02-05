@@ -16,6 +16,11 @@ myClass.X();
 myClass.X(4, 5);
 myClass[5] = 10;
 Console.WriteLine(myClass[5]);
+MyClass2 myClass2 = new MyClass2();
+MyClass2.MyClass3 myClass3 = new MyClass2.MyClass3();
+myClass2.x(5);
+
+//Oluşturduğumuz yapılara açıklama satırı eklememiz için class,metot,property vs gibi yapıların üstüne üç slash işareti ile açıklama satırı ekleyebiliriz
 class MyClass
 {
     int yasi; //Field
@@ -113,5 +118,36 @@ class Banka
             else
                 bakiye = value * 95 / 100;
         }
+    }
+}
+/// <summary>
+/// Bu bir örnek class'tır.
+/// </summary>
+class MyClass2
+{
+    int a;
+    /// <summary>
+    /// Bu bir prop property'dir
+    /// </summary>
+    public int MyProperty { get; set; }
+    /// <summary>
+    /// Bu bir örnek metottur.
+    /// </summary>
+    public void X()
+    {
+
+    }
+    /// <summary>
+    /// Bu bir parametre alan bir metot overloadıdır.
+    /// </summary>
+    /// <param name="a">a parametresi</param>
+    public void x(int a) { }
+    public int this[int a]
+    {
+        get { return a; }
+    }
+    public class MyClass3
+    {
+
     }
 }
