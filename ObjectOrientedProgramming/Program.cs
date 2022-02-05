@@ -24,8 +24,8 @@ myClass4.X();
 MyReferanceClass myReferance = new MyReferanceClass(); //Referanslı nesne
 myReferance.MyProperty = 10; //Heapteki MyReferanceClass nesnesinin myproperty alanı 10 olmuş oldu
 new MyReferanceClass(); //Referanssız Nesne
-//Referanssız Nesne : Eğer ki bir nesne referanssızsa bunu oluşturabilmekteyiz... lakin bu nesne sistemde/memory'de lüzumsuz yer kaplayacagından dolayı belli bir süre sonra Garbage Collector dediğimiz çöp toplayıcısı tarafından temizlenecektir. Garbage Collector : Heap'te referanssız olan nesneleri imha etmekten/temizlemekten sorumlu bir yapılanmadır.
- 
+                        //Referanssız Nesne : Eğer ki bir nesne referanssızsa bunu oluşturabilmekteyiz... lakin bu nesne sistemde/memory'de lüzumsuz yer kaplayacagından dolayı belli bir süre sonra Garbage Collector dediğimiz çöp toplayıcısı tarafından temizlenecektir. Garbage Collector : Heap'te referanssız olan nesneleri imha etmekten/temizlemekten sorumlu bir yapılanmadır.
+
 //Oluşturduğumuz yapılara açıklama satırı eklememiz için class,metot,property vs gibi yapıların üstüne üç slash işareti ile açıklama satırı ekleyebiliriz
 #region This Keywordü
 //Sınıfın nesnesini temsil eder
@@ -33,6 +33,24 @@ new MyReferanceClass(); //Referanssız Nesne
 //this kullanmak zorunlu değildir.
 //THİS KULLANILDIĞI YER : Aynı isimde field ile metot parametrelerini ayırmak için kullanılır!!!!
 //Bir constructor'dan başka bir constructer'i çağırmak için kullanılır
+#endregion
+#region Object Initializer İle Nesne Oluşturma Esnasında Propertylere İlk Değer Atama
+MyReferanceClass myReferance2 = new MyReferanceClass();//Bu yapılanmada nesneyi oluşturduk ama propertylerine değer vermediğimizden dolayı classın propertyleri field alanları default değerleri alıcaktır.
+MyReferanceClass myReferance1 = new MyReferanceClass()
+{
+    MyProperty = 5,
+    MyProperty2 = 10,
+    MyProperty3 = 15,
+};//Bu yapılanmada Nesneyi oluştururken değerleri verdik
+
+#region Referanssız Nesneye Değer atama
+new MyReferanceClass()
+{
+    MyProperty = 20,
+    MyProperty2 = 20,
+    MyProperty3 = 20,
+}
+#endregion
 #endregion
 new MyNesneClass();//Heapte nesne oluşturduk. STACK kısmında oluşturualkacak olan bir değişken ile heapteki nesne referans olarak gösterilebilir. Yani
 MyNesneClass myNesne; //Stackte oluşturulmuş olan bir değişken bunu New NyNesneClass(); ile stackteki değişkenin referansını heapteki MyNesneClassı nesnesini işaretlemiş oluruz.
@@ -187,4 +205,6 @@ class MyNesneClass
 class MyReferanceClass
 {
     public int MyProperty { get; set; }
+    public int MyProperty2 { get; set; }
+    public int MyProperty3 { get; set; }
 }
