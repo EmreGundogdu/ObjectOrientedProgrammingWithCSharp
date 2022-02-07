@@ -90,7 +90,9 @@ new MyReferanceClass()
 new MyNesneClass();//Heapte nesne oluşturduk. STACK kısmında oluşturualkacak olan bir değişken ile heapteki nesne referans olarak gösterilebilir. Yani
 MyNesneClass myNesne; //Stackte oluşturulmuş olan bir değişken bunu New NyNesneClass(); ile stackteki değişkenin referansını heapteki MyNesneClassı nesnesini işaretlemiş oluruz.
 //MyNesneClass myNesne = new();
-
+MyEncapsulationClass myEncapsulation = new MyEncapsulationClass();
+myEncapsulation.ASet(15);
+Console.WriteLine(myEncapsulation.AGet());
 class MyClass
 {
     int yasi; //Field
