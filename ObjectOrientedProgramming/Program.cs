@@ -130,6 +130,10 @@ MyRecord recordClass2 = recordClass with { MyProperty2 = 15 };
 //Her nesnenin içerisinde default bir constructor vardır. Yani class içerisinde constructorunu oluşturmasak ve nesneyi constructorsuz bir class'tan oluştursak, nesne oluştururken default bir constructor oluşur
 //Constructor'ın erişim belirleyicisini private yaparken nesne üretimini engellemiş oluruz.
 #endregion
+#region Destructor/Finalizer 
+//Bir class'tan üretilmiş olan nesne imha edilirken otomatik çağırılan metottur.
+//Sadece class'ta ve bir kere tanımlanabilir ve parametre alamayan bir fonksiyondur.
+#endregion
 //CLASSLAR 
 class MyClass
 {
@@ -418,5 +422,12 @@ record MyRecordConstructorClass
     public MyRecordConstructorClass(int a) : this()
     {
         Console.WriteLine($"2. Constructor a: {a}");
+    }
+}
+class MyDestructorClass
+{
+    ~MyDestructorClass()
+    {
+
     }
 }
