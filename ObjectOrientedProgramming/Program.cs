@@ -89,13 +89,19 @@ new MyReferanceClass()
 #endregion
 new MyNesneClass();//Heapte nesne oluşturduk. STACK kısmında oluşturualkacak olan bir değişken ile heapteki nesne referans olarak gösterilebilir. Yani
 MyNesneClass myNesne; //Stackte oluşturulmuş olan bir değişken bunu New NyNesneClass(); ile stackteki değişkenin referansını heapteki MyNesneClassı nesnesini işaretlemiş oluruz.
-//MyNesneClass myNesne = new();
+                      //MyNesneClass myNesne = new();
+#region Encapsulation Examples
 MyEncapsulationClass myEncapsulation = new MyEncapsulationClass();
 myEncapsulation.ASet(15);
 Console.WriteLine(myEncapsulation.AGet());
 
 myEncapsulation.b = 1234;
 Console.WriteLine(myEncapsulation.b);
+#endregion
+#region Init-Only Properties
+//Init-only Properties özelliğine 'init' keywordü eşlik etmektedir.
+#endregion
+//CLASSLAR 
 class MyClass
 {
     int yasi; //Field
@@ -288,4 +294,10 @@ class MyEncapsulationClass
         }
     } //Full Property
     #endregion
+}
+class MyRecordClass
+{
+    //init keywordünü kullandığımız zaman propertylerin hem readonly hemde değer atamak istediğimiz zaman object initializer yaparken değer atamamızı sağlar. Object initializer dışında nesne tanımlarken propertylere değer atamak istersek Init-only buna izin vermiyecektir. Sadece ve sadece object initializer zamanında 'init' keywordü kullanılan propertylere değer atayabiliriz.
+    public int IntOzellik { get; init; } = 10;
+    public string StringOzellik { get; init; } = "Emre";
 }
