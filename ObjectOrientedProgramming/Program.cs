@@ -255,3 +255,15 @@ class MyDeepClass
         return (MyDeepClass)this.MemberwiseClone();
     }
 }
+class MyEncapsulationClass
+{
+    int a;
+    public int AGet()
+    {
+        return this.a;
+    }
+    public void ASet(int value)
+    {
+        this.a = value;
+    }
+}
