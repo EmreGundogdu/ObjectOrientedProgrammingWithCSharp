@@ -93,7 +93,10 @@ MyNesneClass myNesne; //Stackte oluşturulmuş olan bir değişken bunu New NyNe
 new MyConstructorClass(5);
 MyConstructorClass myConstructorClass = new(15);
 MyConstructorClass myConstructorClass2 = new("Emre");
-MyConstructorClass myConstructorClass3 = new("Emre",21);
+MyConstructorClass myConstructorClass3 = new("Emre", 21);
+MyPrivateConstructorClass myPrivate = new MyPrivateConstructorClass();
+new MyThisConstructorClass();
+new MyThisConstructorClass(5);
 #region Encapsulation Examples
 MyEncapsulationClass myEncapsulation = new MyEncapsulationClass();
 myEncapsulation.ASet(15);
@@ -126,7 +129,7 @@ MyRecord recordClass2 = recordClass with { MyProperty2 = 15 };
 //Constructor, nesne oluşturma sürecinde tetiklenmek zorundadır.
 //Constructor Davranış Modeli : Bir classtan nesne üretirken o class'ın field alanlarına nesneyi oluştururken değer atamak istiyorsak Constructor metod ile bunu yaparız
 //Her nesnenin içerisinde default bir constructor vardır. Yani class içerisinde constructorunu oluşturmasak ve nesneyi constructorsuz bir class'tan oluştursak, nesne oluştururken default bir constructor oluşur
-
+//Constructor'ın erişim belirleyicisini private yaparken nesne üretimini engellemiş oluruz.
 #endregion
 //CLASSLAR 
 class MyClass
@@ -376,8 +379,30 @@ class MyConstructorClass
     {
 
     }
-    public MyConstructorClass(string a,int b)
+    public MyConstructorClass(string a, int b)
     {
 
+    }
+}
+class MyPrivateConstructorClass
+{
+    MyPrivateConstructorClass()
+    {
+
+    }
+    void X()
+    {
+        new MyPrivateConstructorClass();
+    }
+}
+class MyThisConstructorClass
+{
+    public MyThisConstructorClass()
+    {
+        Console.WriteLine("1. Constructor");
+    }
+    public MyThisConstructorClass(int a):this()
+    {
+        Console.WriteLine($"2. Constructor : a = {a}");
     }
 }
