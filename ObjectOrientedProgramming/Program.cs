@@ -96,6 +96,11 @@ MyConstructorClass myConstructorClass2 = new("Emre");
 MyConstructorClass myConstructorClass3 = new("Emre", 21);
 MyPrivateConstructorClass myPrivate = new MyPrivateConstructorClass();
 new MyThisConstructorClass(5, 6); //birinci constructor sonra ikinci constructor çalışır.
+
+void X()
+{
+    MyDestructorClass myDestructorClass = new MyDestructorClass();
+}
 #region Encapsulation Examples
 MyEncapsulationClass myEncapsulation = new MyEncapsulationClass();
 myEncapsulation.ASet(15);
@@ -133,6 +138,14 @@ MyRecord recordClass2 = recordClass with { MyProperty2 = 15 };
 #region Destructor/Finalizer 
 //Bir class'tan üretilmiş olan nesne imha edilirken otomatik çağırılan metottur.
 //Sadece class'ta ve bir kere tanımlanabilir ve parametre alamayan bir fonksiyondur.
+#endregion
+#region Destructor 1. Örnek
+X();
+GC.Collect(); //garbage collecturu devreye soktuk.
+Console.ReadLine();
+#endregion
+#region Destructor 2. Örnek
+
 #endregion
 //CLASSLAR 
 class MyClass
@@ -426,8 +439,20 @@ record MyRecordConstructorClass
 }
 class MyDestructorClass
 {
+    public MyDestructorClass()
+    {
+        Console.WriteLine("Nesne üretildi");
+    }
     ~MyDestructorClass()
     {
-
+        Console.WriteLine("Nesne imha ediliyor...");
+    }
+}
+class MyMyDestructorClass2
+{
+    int no;
+    public MyMyDestructorClass2(int no)
+    {
+        this.no = no; ;
     }
 }
