@@ -109,6 +109,14 @@ MyRecordClass myRecordClass = new MyRecordClass()
 Console.WriteLine(myRecordClass.IntOzellik); //Readonly'dir ama yazılabilir değildir. Anca object initializer'de değer atanır.
 Console.WriteLine(myRecordClass.StringOzellik);
 #endregion
+#region Record
+MyRecord recordClass = new MyRecord()
+{
+    MyProperty = 5,
+    MyProperty2 = 10
+};
+MyRecord recordClass2 = recordClass with { MyProperty2 = 15 };
+#endregion
 //CLASSLAR 
 class MyClass
 {
@@ -325,6 +333,7 @@ class MyRecordClass
 record MyRecord
 {
     public int MyProperty { get; init; }
+    public int MyProperty2 { get; init; }
     public void X()
     {
 
