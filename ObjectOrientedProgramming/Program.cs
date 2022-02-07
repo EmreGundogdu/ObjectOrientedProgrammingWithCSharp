@@ -321,3 +321,24 @@ class MyRecordClass
     public int IntOzellik { get; init; } = 10;
     public string StringOzellik { get; init; } = "Emre";
 }
+//recordlar bir classtır
+record MyRecord
+{
+    public int MyProperty { get; init; }
+    public void X()
+    {
+
+    }
+    public MyRecord()
+    {
+
+    }
+    ~MyRecord()
+    {
+
+    }
+    static MyRecord()
+    {
+
+    }
+}
