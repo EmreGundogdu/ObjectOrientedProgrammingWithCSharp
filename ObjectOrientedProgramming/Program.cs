@@ -102,6 +102,7 @@ Console.WriteLine(myEncapsulation.b);
 //Init-only Properties özelliğine 'init' keywordü eşlik etmektedir.
 MyRecordClass myRecordClass = new MyRecordClass()
 {
+    A = 10,
     IntOzellik = 5,
     StringOzellik = "Emre"
 };
@@ -305,6 +306,18 @@ class MyEncapsulationClass
 class MyRecordClass
 {
     //init keywordünü kullandığımız zaman propertylerin hem readonly hemde değer atamak istediğimiz zaman object initializer yaparken değer atamamızı sağlar. Object initializer dışında nesne tanımlarken propertylere değer atamak istersek Init-only buna izin vermiyecektir. Sadece ve sadece object initializer zamanında 'init' keywordü kullanılan propertylere değer atayabiliriz. 'init' keywordü get keywordü olmaksızın kullanılamaz ve set bloğunda kullanıalamaz yani set olmucak.
+    readonly int a;
+    public int A
+    {
+        get
+        {
+            return a;
+        }
+        init //Readonly bir field'a değer atamak için de init keywordü kullanılır.
+        {
+            a = value;
+        }
+    }
     public int IntOzellik { get; init; } = 10;
     public string StringOzellik { get; init; } = "Emre";
 }
