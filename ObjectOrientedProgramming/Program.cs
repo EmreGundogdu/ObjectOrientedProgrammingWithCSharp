@@ -258,11 +258,11 @@ class MyDeepClass
 class MyEncapsulationClass
 {
     int a;
-    public int AGet()
+    public int AGet()// a filedini dışarıya verdik
     {
         return this.a;
     }
-    public void ASet(int value)
+    public void ASet(int value) //Dışarıdan gelen value değerini a fieldnin değerine atadık
     {
         this.a = value;
     }
