@@ -95,8 +95,7 @@ MyConstructorClass myConstructorClass = new(15);
 MyConstructorClass myConstructorClass2 = new("Emre");
 MyConstructorClass myConstructorClass3 = new("Emre", 21);
 MyPrivateConstructorClass myPrivate = new MyPrivateConstructorClass();
-new MyThisConstructorClass();
-new MyThisConstructorClass(5);
+new MyThisConstructorClass(5, 6); //birinci constructor sonra ikinci constructor çalışır.
 #region Encapsulation Examples
 MyEncapsulationClass myEncapsulation = new MyEncapsulationClass();
 myEncapsulation.ASet(15);
@@ -397,12 +396,27 @@ class MyPrivateConstructorClass
 }
 class MyThisConstructorClass
 {
-    public MyThisConstructorClass()
+    public MyThisConstructorClass()//3) 2. constructor burayı çalıştırır.
     {
         Console.WriteLine("1. Constructor");
     }
-    public MyThisConstructorClass(int a):this()
+    public MyThisConstructorClass(int a) : this() //2)parametre almayan constructoru tetikler
     {
         Console.WriteLine($"2. Constructor : a = {a}");
+    }
+    public MyThisConstructorClass(int a, int b) : this(a)//1)int a parametresi alan constructor tetiklenicek
+    {
+        Console.WriteLine($"3. Constructor : a = {a} & b = {b}");
+    }
+}
+record MyRecordConstructorClass
+{
+    public MyRecordConstructorClass()
+    {
+        Console.WriteLine("1. Constructor");
+    }
+    public MyRecordConstructorClass(int a) : this()
+    {
+        Console.WriteLine($"2. Constructor a: {a}");
     }
 }
