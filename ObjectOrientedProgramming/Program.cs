@@ -117,6 +117,10 @@ MyRecord recordClass = new MyRecord()
 };
 MyRecord recordClass2 = recordClass with { MyProperty2 = 15 };
 #endregion
+#region Constructor
+//T t = new T(); //Buradaki parantezler constructor metodunun parantezleridir. Nesneye dair konfigurasyon yapmamızı sağlayan ve nesne üretilirken ilk tetiklenen fonksiyondur.
+//Constructor, nesne oluşturma sürecinde tetiklenmek zorundadır.
+#endregion
 //CLASSLAR 
 class MyClass
 {
