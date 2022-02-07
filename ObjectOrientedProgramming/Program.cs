@@ -145,7 +145,11 @@ GC.Collect(); //garbage collecturu devreye soktuk.
 Console.ReadLine();
 #endregion
 #region Destructor 2. Örnek
-
+int sayi = 100;
+while (sayi >= 1)
+    new MyMyDestructorClass2(sayi--);
+GC.Collect();
+Console.ReadLine();
 #endregion
 //CLASSLAR 
 class MyClass
@@ -454,5 +458,10 @@ class MyMyDestructorClass2
     public MyMyDestructorClass2(int no)
     {
         this.no = no; ;
+        Console.WriteLine($"{no}. nesne oluşturuldu");
+    }
+    ~MyMyDestructorClass2()
+    {
+        Console.WriteLine($"{no}. nesne imha edilmiştir.");
     }
 }
