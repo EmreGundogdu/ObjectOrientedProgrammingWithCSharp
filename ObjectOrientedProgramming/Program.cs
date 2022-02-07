@@ -92,6 +92,8 @@ MyNesneClass myNesne; //Stackte oluşturulmuş olan bir değişken bunu New NyNe
                       //MyNesneClass myNesne = new();
 new MyConstructorClass(5);
 MyConstructorClass myConstructorClass = new(15);
+MyConstructorClass myConstructorClass2 = new("Emre");
+MyConstructorClass myConstructorClass3 = new("Emre",21);
 #region Encapsulation Examples
 MyEncapsulationClass myEncapsulation = new MyEncapsulationClass();
 myEncapsulation.ASet(15);
@@ -371,6 +373,10 @@ class MyConstructorClass
 
     }
     public MyConstructorClass(string a)
+    {
+
+    }
+    public MyConstructorClass(string a,int b)
     {
 
     }
