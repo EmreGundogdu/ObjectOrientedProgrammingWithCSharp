@@ -93,6 +93,9 @@ MyNesneClass myNesne; //Stackte oluşturulmuş olan bir değişken bunu New NyNe
 MyEncapsulationClass myEncapsulation = new MyEncapsulationClass();
 myEncapsulation.ASet(15);
 Console.WriteLine(myEncapsulation.AGet());
+
+myEncapsulation.b = 1234;
+Console.WriteLine(myEncapsulation.b);
 class MyClass
 {
     int yasi; //Field
@@ -259,6 +262,8 @@ class MyDeepClass
 }
 class MyEncapsulationClass
 {
+    #region Eskiden Yapılan Encapsulation
+    //Eski yöntem ile encapsulation
     int a;
     public int AGet()// a filedini dışarıya verdik
     {
@@ -268,4 +273,19 @@ class MyEncapsulationClass
     {
         this.a = value;
     }
+    #endregion
+    #region Yeni Yöntem İle Encapsulation
+    public int b;
+    public int MyProperty
+    {
+        get
+        {
+            return b;
+        }
+        set
+        {
+            b = value;
+        }
+    } //Full Property
+    #endregion
 }
