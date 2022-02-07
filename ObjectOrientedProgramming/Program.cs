@@ -90,6 +90,8 @@ new MyReferanceClass()
 new MyNesneClass();//Heapte nesne oluşturduk. STACK kısmında oluşturualkacak olan bir değişken ile heapteki nesne referans olarak gösterilebilir. Yani
 MyNesneClass myNesne; //Stackte oluşturulmuş olan bir değişken bunu New NyNesneClass(); ile stackteki değişkenin referansını heapteki MyNesneClassı nesnesini işaretlemiş oluruz.
                       //MyNesneClass myNesne = new();
+new MyConstructorClass();
+MyConstructorClass myConstructorClass = new();
 #region Encapsulation Examples
 MyEncapsulationClass myEncapsulation = new MyEncapsulationClass();
 myEncapsulation.ASet(15);
@@ -121,6 +123,7 @@ MyRecord recordClass2 = recordClass with { MyProperty2 = 15 };
 //T t = new T(); //Buradaki parantezler constructor metodunun parantezleridir. Nesneye dair konfigurasyon yapmamızı sağlayan ve nesne üretilirken ilk tetiklenen fonksiyondur.
 //Constructor, nesne oluşturma sürecinde tetiklenmek zorundadır.
 //Constructor Davranış Modeli : Bir classtan nesne üretirken o class'ın field alanlarına nesneyi oluştururken değer atamak istiyorsak Constructor metod ile bunu yaparız
+//Her nesnenin içerisinde default bir constructor vardır. Yani class içerisinde constructorunu oluşturmasak ve nesneyi constructorsuz bir class'tan oluştursak, nesne oluştururken default bir constructor oluşur
 #endregion
 //CLASSLAR 
 class MyClass
@@ -354,5 +357,12 @@ record MyRecord
     static MyRecord()
     {
 
+    }
+}
+class MyConstructorClass
+{
+    public MyConstructorClass()
+    {
+        Console.WriteLine("Bir adet myconstructor nesnesi oluşturuldu.");
     }
 }
