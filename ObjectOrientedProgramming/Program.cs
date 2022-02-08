@@ -179,6 +179,7 @@ database1.ConnectionString = "sdasdasdasdas";
 #region Positional Record
 MyRecordClass2 myRecordClass2 = new MyRecordClass2("Emre", "DASDASDSA");
 var (n, s) = myRecordClass2; //MyRecordClass2'de parametreli verdik sonra burada onlar TUPLE yöntemi ile 'n' ve 's' değişkenlerine atadık.
+
 #endregion
 //CLASSLAR 
 class MyClass
@@ -538,7 +539,14 @@ class Datebase
         datebase = new Datebase();
     }
 }
-record MyRecordClass2(string name, string username)
+record MyRecordClass2(string Name, string Username)//Nesne oluştururken bu constructorun çalışması zorunlu
 {
+    public MyRecordClass2() : this("emre", "derder")
+    {
 
+    }
+    public MyRecordClass2(string name) : this()
+    {
+
+    }
 }
