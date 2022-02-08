@@ -164,6 +164,7 @@ var (x, y) = person;
 #region Static Constructor
 //Bir sınıftan ilk nesne üretilirken ilk tetiklenecek olan metottur.
 //Üretilen ilk nesnenin dışında bir daha tetiklenmez
+new MyStaticConstructorClass();
 #endregion
 //CLASSLAR 
 class MyClass
