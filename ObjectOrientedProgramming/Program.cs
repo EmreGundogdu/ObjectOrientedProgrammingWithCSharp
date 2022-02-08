@@ -165,9 +165,15 @@ var (x, y) = person;
 //Bir sınıftan ilk nesne üretilirken ilk tetiklenecek olan metottur.
 //Üretilen ilk nesnenin dışında bir daha tetiklenmez
 new MyStaticConstructorClass();
+
 #endregion
 #region Singleton Design Pattern
 //Bir sınıftan uygulama bazında sade ve sadece tek bir nesne oluşturulmasını istiyorsan kullanabileceğin bir design pattern.
+var database1 = Datebase.GetInstance;
+var database2 = Datebase.GetInstance;
+var database3 = Datebase.GetInstance;
+database1.ConnectionString = "sdasdasdasdas";
+//1. Nesne'de yaptığım değişiklik diğer nesneleri de etkileyeceği için yani Single Design ile static yapılanmadan dolayı bir nesne üretileceği için database 1'de yapılan değişiklik diğer bütün değişkenlerde de etki gösterdi
 #endregion
 //CLASSLAR 
 class MyClass
@@ -504,5 +510,26 @@ class MyStaticConstructorClass
     {
         Console.WriteLine("MyStaticConstructorClass static constructoru tetiklendi");
         //Static constructor'ın tetiklenebilmesi için illa ilk nesne üretimi yapılmasına gerek yoktur. İlgili sınıf içerisinde herhangi bir static yapılanmada tetiklenmesi static const. tetiklenmesini sağlayacaktır.
+    }
+}
+class Datebase
+{
+    //Singletion Design'da bir tane nesne üretilmesi için yani bunun sağlanması için constructorun private olması gerekir.
+    Datebase()
+    {
+
+    }
+    public string ConnectionString { get; set; }
+    static Datebase datebase;
+    static public Datebase GetInstance
+    {
+        get
+        {
+            return datebase;
+        }
+    }
+    static Datebase()
+    {
+        datebase = new Datebase();
     }
 }
