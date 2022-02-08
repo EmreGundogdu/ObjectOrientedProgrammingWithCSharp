@@ -127,6 +127,7 @@ MyRecord recordClass = new MyRecord()
     MyProperty = 5,
     MyProperty2 = 10
 };
+//Field alanalarına object initializer yapılanması ile değer veriyoruz.
 MyRecord recordClass2 = recordClass with { MyProperty2 = 15 };
 #endregion
 #region Constructor
@@ -174,6 +175,10 @@ var database2 = Datebase.GetInstance;
 var database3 = Datebase.GetInstance;
 database1.ConnectionString = "sdasdasdasdas";
 //1. Nesne'de yaptığım değişiklik diğer nesneleri de etkileyeceği için yani Single Design ile static yapılanmadan dolayı bir nesne üretileceği için database 1'de yapılan değişiklik diğer bütün değişkenlerde de etki gösterdi
+#endregion
+#region Positional Record
+MyRecordClass2 myRecordClass2 = new MyRecordClass2("Emre", "DASDASDSA");
+var (n, s) = myRecordClass2; //MyRecordClass2'de parametreli verdik sonra burada onlar TUPLE yöntemi ile 'n' ve 's' değişkenlerine atadık.
 #endregion
 //CLASSLAR 
 class MyClass
@@ -484,7 +489,7 @@ class MyMyDestructorClass2
         this.no = no; ;
         Console.WriteLine($"{no}. nesne oluşturuldu");
     }
-    ~MyMyDestructorClass2()
+    ~MyMyDestructorClass2()//Destructor metod
     {
         Console.WriteLine($"{no}. nesne imha edilmiştir.");
     }
@@ -493,7 +498,7 @@ class Person
 {
     public string Name { get; set; }
     public int Age { get; set; }
-    public void Deconstruct(out string name, out int age)
+    public void Deconstruct(out string name, out int age)//out keywordü ile bu parametreleri dıştaki değerlere atıyoruz. Yukarıda örneği var.
     {
         name = Name;
         age = Age;
@@ -532,4 +537,8 @@ class Datebase
     {
         datebase = new Datebase();
     }
+}
+record MyRecordClass2(string name, string username)
+{
+
 }
