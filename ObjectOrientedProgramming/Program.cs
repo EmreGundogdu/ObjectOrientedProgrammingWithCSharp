@@ -486,3 +486,15 @@ class Person
         age = Age;
     }
 }
+class MyStaticConstructorClass
+{
+    public MyStaticConstructorClass()
+    {
+
+    }
+    //Static constructor'da geri dönüş değeri ve erişim belirleyicisi bildirilmez... Overloading yapılmaz. bir sınıfın içierisnde sadece bir tane tanımlanabilir. Yani parametre almaz
+    static MyStaticConstructorClass()
+    {
+
+    }
+}
