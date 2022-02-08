@@ -101,6 +101,12 @@ void X()
 {
     MyDestructorClass myDestructorClass = new MyDestructorClass();
 }
+Person person = new Person()
+{
+    Name = "Emre",
+    Age = 21
+};
+var (x, y) = person;
 #region Encapsulation Examples
 MyEncapsulationClass myEncapsulation = new MyEncapsulationClass();
 myEncapsulation.ASet(15);
@@ -150,6 +156,9 @@ while (sayi >= 1)
     new MyMyDestructorClass2(sayi--);
 GC.Collect();
 Console.ReadLine();
+#endregion
+#region Deconstructor
+//Bir sınıf içerisinde "Deconstruct" ismiyle tanımlanan metot, compiler tarafından özel olarak algılanmakta ve sınıfın nesnesi üzerinden geriye hızlıca Tuple bir değer dödnürmemizi sağlar
 #endregion
 //CLASSLAR 
 class MyClass
@@ -463,5 +472,15 @@ class MyMyDestructorClass2
     ~MyMyDestructorClass2()
     {
         Console.WriteLine($"{no}. nesne imha edilmiştir.");
+    }
+}
+class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public void Deconstruct(out string a, out int b)
+    {
+        a = Name;
+        b = Age;
     }
 }
