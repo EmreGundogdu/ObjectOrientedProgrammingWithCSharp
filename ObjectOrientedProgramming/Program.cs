@@ -493,11 +493,11 @@ class MyStaticConstructorClass
 {
     public MyStaticConstructorClass()
     {
-
+        Console.WriteLine("MyStaticConstructorClass constructoru tetiklendi");
     }
     //Static constructor'da geri dönüş değeri ve erişim belirleyicisi bildirilmez... Overloading yapılmaz. bir sınıfın içierisnde sadece bir tane tanımlanabilir. Yani parametre almaz
     static MyStaticConstructorClass()
     {
-
+        Console.WriteLine("MyStaticConstructorClass static constructoru tetiklendi");
     }
 }
