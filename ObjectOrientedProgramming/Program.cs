@@ -102,7 +102,6 @@ void X()
     MyDestructorClass myDestructorClass = new MyDestructorClass();
 }
 
-
 #region Encapsulation Examples
 MyEncapsulationClass myEncapsulation = new MyEncapsulationClass();
 myEncapsulation.ASet(15);
@@ -161,6 +160,10 @@ Person person = new Person()
     Age = 21
 };
 var (x, y) = person;
+#endregion
+#region Static Constructor
+//Bir sınıftan ilk nesne üretilirken ilk tetiklenecek olan metottur.
+//Üretilen ilk nesnenin dışında bir daha tetiklenmez
 #endregion
 //CLASSLAR 
 class MyClass
