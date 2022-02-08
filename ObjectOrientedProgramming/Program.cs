@@ -166,6 +166,9 @@ var (x, y) = person;
 //Üretilen ilk nesnenin dışında bir daha tetiklenmez
 new MyStaticConstructorClass();
 #endregion
+#region Singleton Design Pattern
+//Bir sınıftan uygulama bazında sade ve sadece tek bir nesne oluşturulmasını istiyorsan kullanabileceğin bir design pattern.
+#endregion
 //CLASSLAR 
 class MyClass
 {
@@ -500,5 +503,6 @@ class MyStaticConstructorClass
     static MyStaticConstructorClass()
     {
         Console.WriteLine("MyStaticConstructorClass static constructoru tetiklendi");
+        //Static constructor'ın tetiklenebilmesi için illa ilk nesne üretimi yapılmasına gerek yoktur. İlgili sınıf içerisinde herhangi bir static yapılanmada tetiklenmesi static const. tetiklenmesini sağlayacaktır.
     }
 }
