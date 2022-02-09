@@ -9,6 +9,10 @@ new MyClass2();//MyClass2de ki boş constructor tetiklendi çünkü biz burda pa
 //Base : bir sınıfın base classının constructorlarından hangisin tetikleneceğini belirlememizi ve varsa parametrelerinin değerlerinin derived classtan verilmesini sağlar
 #endregion
 //BÜTÜN CLASSLAR OBJECT CLASS'TAN ÜRETİLİR.
+#region Name Hiding
+M m = new M();
+m.X=5; //Buradaki X fieldi M classından gelir. Base class'ı olan N classındaki X fieldi değildir. Bu yani Name hiding olmuş oldu
+#endregion
 class Personel
 {
     public string Adi { get; set; }
@@ -115,4 +119,12 @@ class X : Z
     {
 
     }
+}
+class N
+{
+    public int X { get; set; }
+}
+class M : N
+{
+    public int X { get; set; }
 }
