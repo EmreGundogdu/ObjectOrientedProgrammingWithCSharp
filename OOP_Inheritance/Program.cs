@@ -32,3 +32,32 @@ class Ogul : Baba
 {
 
 }
+class A
+{
+    public A()
+    {
+        Console.WriteLine($"{nameof(A)} nesnesi oluşturuldu");
+    }
+}
+class B : A
+{
+    public B()
+    {
+        Console.WriteLine($"{nameof(B)} nesnesi oluşturuldu");
+    }
+
+}
+class C : B
+{
+    public C()
+    {
+        Console.WriteLine($"{nameof(C)} nesnesi oluşturuldu");
+    }
+}
+class D : C
+{
+    public D()
+    {
+        Console.WriteLine($"{nameof(D)} nesnesi oluşturuldu");
+    }
+}
