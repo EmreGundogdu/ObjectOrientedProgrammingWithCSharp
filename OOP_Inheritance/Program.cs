@@ -13,6 +13,17 @@ new MyClass2();//MyClass2de ki boş constructor tetiklendi çünkü biz burda pa
 M m = new M();
 m.X=5; //Buradaki X fieldi M classından gelir. Base class'ı olan N classındaki X fieldi değildir. Bu yani Name hiding olmuş oldu
 #endregion
+#region Recordlarda Kalıtım
+//Recordlar sadece recordlardan kalıtım alabilir.
+//Classlardan kalıtım alamaz veya veremezler
+//Kalıtımın tüm temel kuralları recordlar içinde geçerlidir
+/*
+ * Bir record aynı anda birden fazla recorddan kalıtım alamaz
+ * Recordalr temelde class oldukları için üretilir üretilmez Objectten türerler
+ * base ve this keywordüleri aynı amaçla kullanılmaktadır
+ * Name hiding söz konusu olabilmektedir
+ */
+#endregion
 class Personel
 {
     public string Adi { get; set; }
