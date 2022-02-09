@@ -18,3 +18,15 @@ class Mudur : Personel
 {
 
 }
+class BuyukBaba
+{
+
+}
+class Baba : BuyukBaba
+{
+
+}
+class Ogul : Baba
+{
+
+}
