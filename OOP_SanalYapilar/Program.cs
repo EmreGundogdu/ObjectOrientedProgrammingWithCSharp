@@ -47,6 +47,7 @@ class AlanOrnek
     {
         Ucgen ucgen = new Ucgen(3, 4);
         Dortgern dortgen = new Dortgern(4, 5);
+        Dikdortgen dikdortgen = new Dikdortgen(5, 7);
     }
 }
 class Sekil
