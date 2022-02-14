@@ -70,3 +70,6 @@ class Taksi : Arac
 
 //BU OLAMAZ;
 //D(b); D class'ı cast operatörü ile referans edilemez arada bir bağ yok kalıtım veya polimorfizm gibi
+
+
+//Cast operatörü hata verir uygulamayı sonlandırır. As operatörü bi hata durumunda null hatası verir uygulamay çalışır.
