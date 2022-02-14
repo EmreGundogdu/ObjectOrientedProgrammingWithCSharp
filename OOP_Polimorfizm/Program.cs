@@ -16,15 +16,24 @@ class MyClass2
 
 class A : C
 {
+    public void X()
+    {
 
+    }
 }
 class B : A
 {
+    public void Y()
+    {
 
+    }
 }
 class C
 {
+    public void Z()
+    {
 
+    }
 }
 class Insan
 {
