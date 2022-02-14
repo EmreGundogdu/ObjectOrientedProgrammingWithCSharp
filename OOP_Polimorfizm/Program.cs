@@ -48,3 +48,13 @@ class Kadin : Insan
 {
 
 }
+class Arac
+{
+    public virtual void Calistir()
+        => Console.WriteLine("Araç Çalıştı");
+}
+class Taksi : Arac
+{
+    public override void Calistir()
+        => Console.WriteLine("Taksi Çalıştı");
+}
