@@ -3,6 +3,7 @@ MyClass2 myClass = new MyClass();
 A a = new B();
 B b = new B();
 C c = new B();
+C c2 = new C();
 Insan insan = new Erkek();
 Insan insan2 = new Kadin();
 class MyClass : MyClass2
