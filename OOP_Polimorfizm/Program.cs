@@ -58,3 +58,15 @@ class Taksi : Arac
     public override void Calistir()
         => Console.WriteLine("Taksi Çalıştı");
 }
+//Bir sınıftan aynı sınıf ile bir nesne oluşturduğumuz zaman cast işlemi ile Üst sınıftan alt sınıfa referans vermek/işaretlemek istersek bunu sağlayabiliriz. Örnek A classı var ve B classı olsun; A class(base), B class(derived). B classından bir nesne oluşturduğumuz zaman bunu şu şekilde cast operatörü ile A referansı ile işaretleyebiliriz. ÖRNEK;
+//A a = new B();
+
+
+//Başka bir sınıftan veya alt sınıftan bir classı üst sınıflardan oluşmuş bir nesne ile cast operatörü kullanılarak referans edilemez/işaretlenemez
+//Aralarında kalıtım olan ya da polimorfizm kuralları gereği şu şekilde olabilir
+//B b = new B();
+//(A)b; gibi
+
+
+//BU OLAMAZ;
+//D(b); D class'ı cast operatörü ile referans edilemez arada bir bağ yok kalıtım veya polimorfizm gibi
