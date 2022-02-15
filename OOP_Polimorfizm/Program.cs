@@ -73,3 +73,30 @@ class Taksi : Arac
 
 
 //Cast operatörü hata verir uygulamayı sonlandırır. As operatörü bi hata durumunda null hatası verir uygulamay çalışır.
+#region Nesneler Arası İlişki Türleri
+//is - a ilişkisi: tamamıyla kalıtımla alakalıdır. C# programlama dilinde, iki sınıf arasında : operaötür ile gerçekleştirilen kalıtım neticdesinde ortaya bir is - a ilişkisi çıkmaktadır.
+//Misal;
+//Class Araba
+//Clas Opel : Araba  opel is a Araba | Anlamına gelmiştir.
+
+//has - a ilişkisi: Bir sınıfın başka bir sınıfın nesnesine dair dahiplik ifadesinde bulunan ilişkidir. Bir yandan kompozisyon/composition ilişkisi de denmektedir.
+//class Araba
+//Class Opel : Araba
+/*
+ * Motor motor;
+ * }
+ * class Motor
+ * {
+ * }
+ */
+
+
+//can - do ilişkisi: Interfacelerde kullanılır
+
+
+
+//Association: Sınıflar arasındaki bağlantının zayıf biçimine verilen addır. Sınıflar kendi aralarında ilişkilidr lakin birbirlerinden de bağımsızdırlar.
+//ÖRNEK : bir otobüsteki yolcular ile otobüs arasındaki ilişki Association'dır. Nihayetinden hepsi aynı yöne gitmektedir. Lakin bir yolcu indiğinde bu durum otobüsün ve diğer yolcuların durumunu değiştirmez.
+
+//Aggregation ve Composition:Nesneleri birleştirip daha büyük bir nesne yapmay verilen isimlerdir.Her ikisinde associationda olmayan parça - bütün ilişkisi söz konusudur. Her ikisinde has - a ilişkisi vardır.
+#endregion
