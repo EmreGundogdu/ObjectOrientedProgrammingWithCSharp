@@ -1,6 +1,6 @@
 ﻿#region Field
 //Field : Nesne içerisinde değer tutmamızı sağlayan alanlardır.
-//Class içerisinde tanımlanan fieldlara kendi türün default değerler verilir. Metot içerisinde tanımlanan değişkenlere default değer verilmez.
+//Class : içerisinde tanımlanan fieldlara kendi türün default değerler verilir. Metot içerisinde tanımlanan değişkenlere default değer verilmez.
 #endregion
 #region Property
 //Nesne içerisinde özellik/property sağlar.
@@ -377,7 +377,7 @@ class MyEncapsulationClass
 }
 class MyRecordClass
 {
-    //init keywordünü kullandığımız zaman propertylerin hem readonly hemde değer atamak istediğimiz zaman object initializer yaparken değer atamamızı sağlar. Object initializer dışında nesne tanımlarken propertylere değer atamak istersek Init-only buna izin vermiyecektir. Sadece ve sadece object initializer zamanında 'init' keywordü kullanılan propertylere değer atayabiliriz. 'init' keywordü get keywordü olmaksızın kullanılamaz ve set bloğunda kullanıalamaz yani set olmucak.
+    //init keywordünü kullandığımız zaman propertylerin hem readonly hemde değer atamak istediğimiz zaman object initializer yaparken değer atamamızı sağlar. Object initializer dışında nesne tanımlarken propertylere değer atamak istersek Init-only buna izin vermiyecektir. Sadece ve sadece object initializer zamanında 'init' keywordü kullanılan propertylere değer atayabiliriz. 'init' keywordü get keywordü olmaksızın kullanılamaz ve set bloğunda kullanılamaz yani set olmucak.
     readonly int a;
     public int A
     {

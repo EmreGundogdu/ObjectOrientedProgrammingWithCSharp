@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOP_Inheritance", "OOP_Inhe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOP_SanalYapilar", "OOP_SanalYapilar\OOP_SanalYapilar.csproj", "{42DBC83F-37AA-49BD-811F-7699D5C80F9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP_Polimorfizm", "OOP_Polimorfizm\OOP_Polimorfizm.csproj", "{5C829B42-7FBF-46BB-AC0C-FB9B237D10BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOP_Polimorfizm", "OOP_Polimorfizm\OOP_Polimorfizm.csproj", "{5C829B42-7FBF-46BB-AC0C-FB9B237D10BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP_Sealed", "OOP_Sealed\OOP_Sealed.csproj", "{38A2ACDC-E71F-4017-827B-649EB01F81B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{5C829B42-7FBF-46BB-AC0C-FB9B237D10BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C829B42-7FBF-46BB-AC0C-FB9B237D10BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C829B42-7FBF-46BB-AC0C-FB9B237D10BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38A2ACDC-E71F-4017-827B-649EB01F81B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38A2ACDC-E71F-4017-827B-649EB01F81B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38A2ACDC-E71F-4017-827B-649EB01F81B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38A2ACDC-E71F-4017-827B-649EB01F81B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
